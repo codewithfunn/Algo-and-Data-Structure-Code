@@ -20,7 +20,7 @@ struct Node * DeleteFirst(struct Node * head){
     return head;
 }
 // Case 2 : Deleting the element at the given index from the linked list
-struct Node * DeleteAtFirst(struct Node * head , int index){
+struct Node * DeleteAtIndex(struct Node * head , int index){
     struct Node *p = head; // point first element
     struct Node *q = head->next;// point second element
     for (int i = 0; i < index-1; i++)
@@ -47,7 +47,7 @@ struct Node * DeleteAtLast(struct Node * head ){
 }
 
 // Case 4 : Deleting the element with a given value from the linked list
-struct Node * DeleteAtIndex(struct Node * head , int value){
+struct Node * DeletebyValue(struct Node * head , int value){
     struct Node *p = head;
     struct Node *q = head->next;
     while(q->data!=value && q->next!=NULL){
@@ -94,9 +94,9 @@ int main(){
     LinkListTraversal(head);
 
     // head = DeleteFirst(head);// for deleting the first element in the linked list
-    // head = DeleteAtFirst(head,2);// for deleting the element at given index
+    // head = DeleteAtIndex(head,2);// for deleting the element at given index
     // head = DeleteAtLast(head);// for deleting the last element in the linked list
-    head = DeleteAtIndex(head,23);// for deleting the node at a given value
+    head = DeletebyValue(head,23);// for deleting the node at a given value
     printf("linked list after deletion!\n");
     LinkListTraversal(head);
 
