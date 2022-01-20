@@ -31,24 +31,24 @@ int main(){
     // s.top = -1;// is empty
     // s.arr = (int *)malloc(s.size * sizeof(int));// creating an arr using dynamic memory
 
-    struct stack *s;
+    struct stack *s= (struct stack *)malloc(sizeof(struct stack ));// allocation the memory dynamically using malloc
     s->size = 6;
     s->top = -1;// is empty
     s->arr = (int *)malloc(s->size * sizeof(int));   
 
     // Check if stack is empty
     if(isEmpty(s)){
-        printf("The stack is empty");
+        printf("The stack is empty\n");
     }else{
-        printf("the stack is not empty");
+        printf("the stack is not empty\n");
     }
 
 
     // // Check if stack is full
     if(isFull(s)){
-        printf("the stack is full");
+        printf("the stack is full\n");
     }else{
-        printf("the stack is not full");
+        printf("the stack is not full\n");
     }
     return 0 ;
 }
