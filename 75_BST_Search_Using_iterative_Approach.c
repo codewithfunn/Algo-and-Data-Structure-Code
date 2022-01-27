@@ -47,6 +47,14 @@ struct node* BST_search_iterative(struct node* root , int key){
     }
     return NULL;
 } 
+// left -> root -> right
+void InOrder_traversal(struct node *root){
+    if(root!=NULL){
+        InOrder_traversal(root->left);
+        printf(" %d ",root->data);
+        InOrder_traversal(root->right);
+    }
+}
 
 int main(){
     struct node *p = createNode(5);
@@ -64,7 +72,7 @@ int main(){
 
     // linking the root node with left and right children
     p->left   = p1;
-    p->right  = p1;
+    p->right  = p2;
     p1->left  = p3;
     p1->right = p4;
 
